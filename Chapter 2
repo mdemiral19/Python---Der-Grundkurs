@@ -1,0 +1,60 @@
+'''Damit ein Programm sinnvolle Aufgaben übernehmen kann, muss es Werte, Zeichenketten und andere Daten vorübergehend
+speichern. Diese Aufgabe übernehmen in allen gängigen Programmiersprachen Variablen. Beachten Sie, dass die 'Lebensdauer'
+von Variablen nur bis zum Programmende reicht. Der Inhalt der Variablen geht verloren, sobald das Programm endet. Um Daten
+dauerhaft zu speichern, muss der Inhalt von Variablen in eine Datei oder Datenbank übertragen werden.'''
+
+'''Grundregel 1: Zuweisung vor der Verwendung; x=x+1; x muss vorher einmalig zugewiesen werden, z. B. x=0 
+Grundregel 2: Keine Typedeklaration; in Python-Variablen können Objekte jedes beliebigen Typs gespeichert werden. Python
+ merkt sich den Typ und weiß somit, auf welche Art von Daten eine Variable verweist. Im Gegensatz zu vielen anderen Prorammiersprachen
+ kann der Typ einer Variablen aber nicht festgelegt oder eingeschränkt werden. Es ohne Weiteres möglich, in ein und derselben Variablen
+ Daten untershiedlichen Typs zu speichern, also z. B. zuerst eine Zahl (x=1), später eine Zeichenkette (x='abc') und schließlich eine
+ Liste (x=[3,2,1]).
+ Python kennt keine Konstanten - Python bietet die keine Möglichkeit, Konstanten (also unveränderliche Variablen) zu definieren.
+ Es ist üblich, den Namen einer Variablen, die wie eine Konstante verwendet werden soll, aus lauter Großbuchstaben zu bilden, also z. B. KURSIV=3.
+ Sie können aber nicht verhindern, dass dieser Variablen später ein anderer Wert zugewiesen wird.'''
+
+'''Variablennamen müssen mit Buchstaben oder einem Unterstrich beginnen. Allerdings ist der Unterstrich am Beginn von Variablennamen
+ für Python-interne Daten vorgesehen, weswegen Sie ihn in eigenen Scripten möglichst nicht verwenden sollten. Die weiteren Zeichen 
+ dürfen auch Ziffern enthalten, allerdings keine Bindestriche oder Leerzeichen. Deutsche Sonderzeichen wie äöüß 
+ sind ebenso wie viele andere Unicode-Zeichen zulässig, aber unüblich. 
+ Normalerweise bestehen Variablennamen aus lauter Kleinbuchstaben. Großbuchstaben werden zumeist nur für 
+ Wortzusammensetzungen verwendet, z. B. bei einLangerName.'''
+
+a = 1
+b = 'abc'
+a = a+1
+# a = c+1 # Fehler: An c wurde nie etwas zugewiesen.
+
+einLangerName = 3 # OK
+ein_langer_name = 4 # auch OK
+länge = 3 # OK, aber unüblich
+
+'''so gehts nicht = 5 # Fehler: Leerzeichen sind nicht erlaubt
+so-geht-auch-nicht = 6 # Fehler: Als einziges Sonderzeichen ist nur _ erlaubt'''
+
+'''Datentypen
+Datentyp - Funktion - Beispiel
+int - ganze Zahlen - x=3
+float - Fließkommazahlen - x=3.0
+complex - komplexe Zahlen - x=3+4j
+bool - boolesche Werte - x=bool(1)
+str - Zeichenkette - x='abc'
+tupel - Tupel - x=(1, 2, 3)
+list - Listen - x=[1, 2, 3]
+set - Sets - x={1, 2, 3}
+dict - Dictionaries - x={1:'rot', 2:'blau'}
+bytearray - Byte-Arrays - x=bytearray(...)
+io.TextIOWrapper - Dateien - x=open(readme.txt')
+'''
+
+x=3; type(x)
+
+x=3.1, type(x)
+
+x={1, 2, 3}, type(x)
+
+s = 'abc'
+isinstance(s, str) # True
+isinstance(s, int) # False
+
+

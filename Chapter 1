@@ -1,0 +1,115 @@
+# Elementare Syntaxregeln
+# mehrzeilige Anweisungen erlaubt; Anfang und Ende durch Klammer klar erkenntlich machen; mehrzeilige Strukturen durch \ bilden
+
+
+print('abc,'
+      'efg')
+a = 1 + 2 + \
+    3 + 4
+# Strichpunkte erlauben mehrere Anweisungen in einer Zeile zu formulieren
+
+a = 1;
+b = 2;
+c = 3
+
+# obige Dreifachzuweisung gruppierbar
+
+a, b, c = 1, 2, 3
+
+# Blockelemente
+# if xxx:
+#    anweisung1a
+#    anweisung1b
+# else:
+#    anweisung2a
+#    anweisung2b
+#    anweisung2c
+
+# Code darf direkt nach einem Blockelement angegeben werden; einzeilige Bedingungen oder Schleifen formulierbar
+# if xxx: anweisung
+
+# auf diese Weise mehrere Anweisungen in einer Zeile ausführbar
+# if xxx: anweisung1; anweisung2; anweisung3
+
+# print: mit der Zeit unwichtiger, da entweder Resultate direkt als Datei ausgegben oder eine grafische Benutzeroberfläche zur Interaktion verwendet wird
+# print-Syntax einfach: Umwandlung jeder Parameter in Zeichenketten und Ausgabe dieser
+# zwischen Parametern Leerzeichen, am Ende ein Zeilenumbruch
+
+print(1, 2, 3 / 4, 'abc', 2 == 3)  # 3/4 direkt als Zahl; 2 ist ungleich 3, daher false-Ausgabe
+
+print('1/7 ist', 1 / 7)
+
+x, y, z = ['eine', 'Liste'], ('ein', 'Tupel'), {'ein', 'Set'}
+print(x, y, z)
+
+# print kennt drei optionale Parameter
+# sep - erstelle Zeichenkette zwischen Parametern, standardmäßig ' ' (Leerzeichen)
+
+print(1, 2, 3, sep='---')
+
+# end - definiert Zeichenkette, die nach dem letzten Parameter ausgegeben wird, standardmäßig '\n'
+
+print(1, 2, 3, sep=';', end='.\nEOF\n')
+
+# file - bestimmt, wo die Ausgabe durchgeführt wird; gibt Möglichkeit Ausgaben in eine Textdatei zu schreben
+
+f = open('out.txt', 'w')
+print(1, 2, 3, file=f)
+f.close()
+
+# input - im Gegensatz zu print, verarbeitet es Texteingaben
+
+name = input('Geben Sie Ihren Namen an:')
+print('Ihr Name lautet:', name)
+
+# Module können über import importiert werden; in Python vorprogrammierte Funktionen
+
+# import modulname - Anweisung ließt Modul; modulname.funktionsname(), um darin definierte Funktionen zu nutzen
+# import m1, m2, m3 - mehrere Module auf einmal importierbar
+
+# import modulname as m - bei dieser Variante können die im Modul definierten Funktionen in der Form m.funktionsname() verwendet werden
+# minimiert Tippaufwand und macht Code übersichtlicher
+
+# from modulname import, n1, n2 - Funktionen oder Klassen n1 und n2 ohne Voranstellen des Modulnamens verwenden
+
+# from modulname import * - Anweisung imporiert alle Symbole aus dem angegebenen Modu, deren Name nicht mit __ beginnt
+# (also mit zwei Unterstrichen zur Kennzeichnung interner Symbole
+
+# import-Anweisungen überlichweise an den Anfang eines Python-Scripts
+
+import sys
+
+print(sys.path)
+
+# Kommentare mit #
+'''Mehrzeilige Kommentare sind hiermit möglich. Hauptsächliche Nutzung als Docstrings, 
+z. B. unmittelbar nach der Definition einer Funktion oder einer Klasse '''
+
+# import aktiviert zwei Python-Erweiterungen:
+# time stellt Funktionen zum Umgang mit Datum und Uhrzeit
+# locale kümmert sich um die Anpassung an landessprachliche Besonderheiten
+import time, locale
+
+# input gibt die angegebene Zeichenkette am Bildschirm aus und nimmt die dann eine Eingabe entgegen
+# hier wird die Eingabe in der Variablen name gespeichert
+name = input('Geben Sie Ihren Namen an: ')
+
+# print gibt Hallo %s! aus, wobei %s aber durch den Inhalt der nachfolgend genannten Variablen ersetzt wird
+print('Hallo %s!' % name)
+
+# Datum und Zeit in aktueller Lokalisierung
+locale.setlocale(locale.LC_ALL, '')
+
+# Methode, die Datum- und Zeitdaten in der jeweiligen Landessprache formatiert
+time = time.strftime('Heute ist %A, der %d. %B.')
+
+# Ausgabe der Variablen
+print(time)
+
+s = 'Let us play together!'
+len(s)
+
+name = 'Mustafa'
+print('Hello ' + name + '!')
+
+print('Hello, World!')
